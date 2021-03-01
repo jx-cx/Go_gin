@@ -65,7 +65,7 @@ func (r *RedisSession) Get(key string) (result interface{}, err error) {
 	// 加锁
 	r.rwlock.Lock()
 	defer r.rwlock.Unlock()
-	result, ok := r.sessionMap
+	result, ok := r.sessionMap[key]
 	if !ok {
 		err = errors.New("key not exists")
 
