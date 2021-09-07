@@ -13,11 +13,11 @@ type MemorySession struct {
 
 // 构造函数
 func NewMemorySession(id string) *MemorySession {
-	m := &MemorySession{
+	l := &MemorySession{
 		sessionId: id,
 		data:      make(map[string]interface{}, 16),
 	}
-	return m
+	return l
 }
 
 func (m *MemorySession) Set(key string, value interface{}) (err error) {
